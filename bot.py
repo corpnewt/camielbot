@@ -6,6 +6,7 @@ import discord
 import asyncio
 from   discord.ext import commands
 import sys
+import os
 import datetime
 import string
 import urllib
@@ -15,8 +16,18 @@ import random
 import json
 
 #load config
-with open('config.json', 'r') as f:
-    config = json.load(f)
+if os.path.exists('config.json'):
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+else:
+    # Create a temp default dict
+    config = {
+              "nowplaying": "",
+              "bot_owner_id": "",
+              "prefix": "",
+              "token": "",
+              "description": ""
+            }
 
 #specify that bot is used for commands and stuff
 bot = commands.Bot(command_prefix=config["prefix"], description=config["description"], game=discord.Game(name=config["nowplaying"]))
