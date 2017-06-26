@@ -1,7 +1,7 @@
 {
-  "nowplaying": "meow",
-  "bot_owner_id": "173442411878416384",
-  "prefix": "!",
+  "nowplaying": "",
+  "bot_owner_id": "",
+  "prefix": "",
   "token": "",
-  "description": "bot"
+  "description": ""
 }
